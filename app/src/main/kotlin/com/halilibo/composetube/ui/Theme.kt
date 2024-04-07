@@ -19,7 +19,10 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun ComposeTubeTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun ComposeTubeTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit,
+) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {
@@ -28,7 +31,6 @@ fun ComposeTubeTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Compo
 
     MaterialTheme(
         colors = colors,
-        typography = typography,
         shapes = shapes,
         content = content
     )
