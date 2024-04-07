@@ -1,5 +1,6 @@
 package com.halilibo.composetube
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -10,8 +11,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.rememberAsyncImagePainter
 import com.halilibo.composetube.model.Video
-import dev.chrisbanes.accompanist.coil.CoilImage
 
 @Composable
 fun HomePage(
@@ -35,8 +36,8 @@ fun HomePage(
                     }
                     .padding(horizontal = 16.dp, vertical = 8.dp)
             ) {
-                CoilImage(
-                    data = video.thumb,
+                Image(
+                    painter = rememberAsyncImagePainter(video.thumb),
                     contentDescription = video.title,
                     modifier = Modifier.size(64.dp)
                 )

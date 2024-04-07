@@ -139,7 +139,7 @@ internal class DefaultVideoPlayerController(
         exoPlayer.playWhenReady = initialState.isPlaying
 
         coroutineScope.launch {
-            previewSeekDebouncer.collect { position ->
+            previewSeekDebouncer.collectLatest { position ->
                 previewExoPlayer.seekTo(position)
             }
         }
